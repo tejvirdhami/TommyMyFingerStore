@@ -1,56 +1,90 @@
-﻿<%@ Language="javascript"%>
-
+﻿<%@ Page Language="javascript" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head runat="server"> 
     <title>Classical ASP</title>
-    <script></script>
-    <style type="text/css">
+    <script type="text/javascript">
 
-        
-        .auto-style2 {
-            
-            text-align:center;
+        function verify() {
 
+            if (document.getElementById("txtUsername").value=="")
+            {
+                document.getElementById('parError').innerHTML = "Please enter the Username";
+                return false;
+            }
+            if (document.getElementById("txtPassword").value == "") {
+                document.getElementById('parError').innerHTML = "Please enter the Password";
+                return false;
+            }
+            else {
+                return true;
+            }
         }
 
+    </script>
+
+
+     <!--Create a style to apply to the one that you want -->
+    <style type="text/css">
+       
+        .auto-style1 {
+            width: 300px;
+            background-color: aqua;
+            text-align: center;
+        }
+
+        .auto-style2 {
+            text-align: center;
+        }
+        
+        #btnClear{
+            width:200px;
+        }
+
+        #btnEnter{
+            width:50px;
+        }
 
     </style>
 </head>
-<body>
-
+<body class="auto-style2">
     <h1 class="auto-style2"><u>LIONS-CLUB</u></h1>
-
-    <form action =" " method="post" id="form1" runat="server" onsubmit="">
-        
-        <table class="auto-style2" align="center">
+  <form name="loginForm" action="" method="post" id="form1" runat="server" onsubmit="return verify();" >
+        <!--Using table -->
+        <table class = "auto-style1" align="center">
+            <tr> 
+                <td>
+                    <label>Username:</label>
+                </td>
+                <td>
+                    <input id="txtUsername" type="text" name="txtUsername" style="width:200px; border-radius:15px;" />  
+                </td>
+            </tr>
             <tr>
                 <td>
-                    
-      <%--  </table>
-
-        
-        <div style="background-color: aqua;
-                    text-align:center;
-                    padding:10px;
-                    border-radius: 10px;
-                    margin-left: 28%;
-                    margin-right: 28%;">
-
-
-
-
-
-
-            <h3>Username : <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></h3>
-            <h3>Password : <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></h3>
-            <button type="button">Enter</button>   <button type="button">Clear</button>
-            <asp:Button ID="Enter" runat="server" Text="Enter" /><asp:Button ID="Clear" runat="server" Text="Clear" />
-
-
-        </div>--%>
-
-    </form>
+                    <label>Password:</label>
+                </td>
+                <td>
+                    <input id="txtPassword" type="password" name="txtPassword" style="width:200px; border-radius:15px;" />  
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!--Button: you need to code, reset and submit has their own actions -->
+                    <input id="btnEnter" type="submit" value="Enter" />    
+                </td>
+                <td>
+                    <input id="btnClear" type="reset" value="Clear" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan ="2">
+                    <!--  this is to call the asp.net < %% > -->
+                    <p id="parError" style="color:red; font-weight:bold;"><% %></p>
+                </td>
+            </tr>
+        </table>
+        </form>
 </body>
 </html>
