@@ -94,6 +94,7 @@
   <ItemGroup>
     <Content Include="index.aspx" />
     <Content Include="Web.config" />
+    <Content Include="welcome.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="index.aspx.designer.vb">
@@ -121,6 +122,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="welcome.aspx.designer.vb">
+      <DependentUpon>welcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="welcome.aspx.vb">
+      <DependentUpon>welcome.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
