@@ -93,6 +93,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.aspx" />
+    <Content Include="indexTommy.aspx" />
+    <Content Include="order.aspx" />
     <Content Include="Web.config" />
     <Content Include="welcome.aspx" />
   </ItemGroup>
@@ -102,6 +104,13 @@
     </Compile>
     <Compile Include="index.aspx.vb">
       <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="indexTommy.aspx.designer.vb">
+      <DependentUpon>indexTommy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="indexTommy.aspx.vb">
+      <DependentUpon>indexTommy.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -122,6 +131,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="order.aspx.designer.vb">
+      <DependentUpon>order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order.aspx.vb">
+      <DependentUpon>order.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="welcome.aspx.designer.vb">
       <DependentUpon>welcome.aspx</DependentUpon>
